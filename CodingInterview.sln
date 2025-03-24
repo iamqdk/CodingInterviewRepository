@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{47665261-7B3E-406E-B9C9-50388865E3C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8B27CB33-5F29-4AB5-9F8B-04491C99166D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataStructures", "Test\TestDataStructures\TestDataStructures.csproj", "{A098575E-0E72-467E-BDA0-D01F880F2917}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{47665261-7B3E-406E-B9C9-50388865E3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47665261-7B3E-406E-B9C9-50388865E3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47665261-7B3E-406E-B9C9-50388865E3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A098575E-0E72-467E-BDA0-D01F880F2917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A098575E-0E72-467E-BDA0-D01F880F2917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A098575E-0E72-467E-BDA0-D01F880F2917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A098575E-0E72-467E-BDA0-D01F880F2917}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A098575E-0E72-467E-BDA0-D01F880F2917} = {8B27CB33-5F29-4AB5-9F8B-04491C99166D}
 	EndGlobalSection
 EndGlobal
