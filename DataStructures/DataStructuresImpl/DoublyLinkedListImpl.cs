@@ -184,9 +184,38 @@ namespace DataStructures.DataStructuresImpl
             return data;
         }
 
-        public IEnumerator<T> GetEnumerator()
+        /// <summary>
+        /// O(1)
+        /// </summary>
+        private int Remove(Node node)
         {
-            throw new NotImplementedException();
+            if (node.Prev == null)
+            {
+                return RemoveFirst();
+            }
+
+            if (node.Next == null)
+            {
+                return RemoveLast();
+            }
+
+            int data = node.Data;
+
+            node.Prev.Next = node.Next;
+            node.Next.Prev = node.Prev;
+
+            node = node.Next = node.Prev = null;
+
+            return data;
+        }
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            Node temp = _head;
+            while (temp != null)
+            {
+                
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
