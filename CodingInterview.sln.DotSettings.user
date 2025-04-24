@@ -9,6 +9,7 @@
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=da99d7be_002Dc946_002D4567_002Db768_002D8d239e66ccc4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestInsert" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::A098575E-0E72-467E-BDA0-D01F880F2917::net8.0::TestDataStructures.Tests.TestInsert&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A098575E-0E72-467E-BDA0-D01F880F2917::net8.0::TestDataStructures.Tests.Run&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A098575E-0E72-467E-BDA0-D01F880F2917::net8.0::TestDataStructures.DataStructuresImplTest.DoublyLinkedListImplTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Drawing;
 
 namespace DataStructures.DataStructuresImpl
 {
@@ -50,7 +51,7 @@ namespace DataStructures.DataStructuresImpl
         public bool IsEmpty() => Size() == 0;
 
         /// <summary>
-        /// O(N)
+        /// O(n)
         /// </summary>
         public void Clear()
         {
@@ -100,6 +101,41 @@ namespace DataStructures.DataStructuresImpl
                _head.Prev = new Node(data, null, _head);
                 _head = _head.Prev;
             }
+
+            _size++;
+        }
+
+        /// <summary>
+        /// O(n)
+        /// </summary>
+        public void AddAt(int index, int val)
+        {
+            if (index < 0 || index > _size)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (index == 0)
+            {
+                AddFirst(val);
+                return;
+            }
+
+            if (index == _size)
+            {
+                AddLast(val);
+                return;
+            }
+
+            Node trav = _head;
+            for (int i = 0; i != index && trav != null; i++)
+            {
+                trav = trav.Next;
+            }
+
+            Node newNode = new Node(val, trav, trav.Next);
+            trav.Next.Prev = newNode;
+            trav.Next = newNode;
 
             _size++;
         }
@@ -204,18 +240,94 @@ namespace DataStructures.DataStructuresImpl
             node.Prev.Next = node.Next;
             node.Next.Prev = node.Prev;
 
-            node = node.Next = node.Prev = null;
+            node.Next = node.Prev = null;
 
             return data;
         }
 
+        /// <summary>
+        /// O(n)
+        /// </summary>
+        public bool Remove(int val)
+        {
+            for (Node trav = _head; trav != null; trav = trav.Next)
+            {
+                if (trav.Data == val)
+                {
+                    Remove(trav);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// O(n)
+        /// </summary>
+        public int RemoveAt(int index)
+        {
+            if (index < 0 || index >= _size)
+            {
+                throw new InvalidOperationException();
+            }
+
+            Node trav;
+            if (index < _size / 2)
+            {
+                trav = _head;
+                for (int i = 0; i != index; i++)
+                {
+                    trav = trav.Next;
+                }
+            }
+            else
+            {
+                trav = _tail;
+                for (int i = _size - 1; i != index; i--)
+                {
+                    trav = trav.Prev;
+                }
+            }
+
+            return Remove(trav);
+        }
+
+        /// <summary>
+        /// O(n)
+        /// </summary>
+        public int IndexOf(int val)
+        {
+            Node trav = _head;
+            for (int i = 0; trav != null; i++)
+            {
+                if (trav.Data == val)
+                {
+                    return i;
+                }
+
+                trav = trav.Next;
+            }
+
+            return -1;
+        }
+
+        /// <summary>
+        /// O(n)
+        /// </summary>
+        public bool Contains(int val)
+        {
+            return IndexOf(val) != -1;
+        }
+
         public IEnumerator<int> GetEnumerator()
         {
-            Node temp = _head;
-            while (temp != null)
-            {
+            //Node temp = _head;
+            //while (temp != null)
+            //{
                 
-            }
+            //}
+            return null;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
